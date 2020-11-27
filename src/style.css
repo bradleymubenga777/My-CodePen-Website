@@ -1,0 +1,354 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: linear-gradient(88deg, cyan, purple);
+    overflow-x: hidden;
+}
+
+html{
+    scroll-behavior: smooth;
+    display: grid;
+}
+
+/*DESKTOP VIEWPORT*/
+#header{
+    width: 100%;
+    background: linear-gradient(44deg, cyan, purple);
+    border-bottom: .1px solid cyan;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    z-index: 10;
+}
+
+.icon, .close-btn {
+    display: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.links{
+    display: flex;
+    list-style: none;
+}
+
+.links li{
+    margin-right: 24px;
+}
+
+.links li a{
+    text-decoration: none;
+    color: rgb(187, 247, 247);
+    letter-spacing: -0.4px;
+    transition: all .4s linear;
+}
+
+.links li a:hover{
+    color: black;
+}
+
+.backdrop{
+    display: none;
+    animation: 0.4s ease-in-out fadeIn forwards;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    to{
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
+
+.text{
+    margin: 0 2% 0 5%;
+    transform: translateX(-120%);
+    transition: all .4s linear;
+    animation-name: slideIn;
+    animation-duration: 2s;
+    animation-delay: .4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideIn{
+    to{
+        transform: translateX(0%);
+    }
+}
+
+.text h1{
+    margin: 0 0 1% 0;
+    text-align: center;
+    font-size: 40px;
+}
+
+.text p{
+    text-align: justify;
+}
+
+.button a{
+    text-decoration: none;
+    color: black;
+    margin-top: 4%;
+    font-weight: 600;
+    justify-self: center;
+    padding: .8em .8em .8em .8em;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all .4s linear;
+    box-shadow: 3.5px 3px 10px rgba(128, 0, 128, 0.514),
+                inset 2px 2px 8px rgba(0, 0, 0, 0.114),
+                inset -2px -2px 8px rgba(0, 0, 0, 0.114);
+}
+
+.button a:hover{
+    transform: scale(1.1);
+    box-shadow: 4px 5px 18px rgba(128, 0, 128, 0.514),
+                inset 2px 2px 8px rgba(0, 0, 0, 0.114),
+                inset -2px -2px 8px rgba(0, 0, 0, 0.114);
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+#home{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-top: 8em;
+    height: 100vh;
+}
+
+#home img{
+    width: 90%;
+    max-width: 100%;
+    height: auto;
+    transition: all .4s linear;
+    animation-name: slideInn;
+    animation-duration: 2s;
+    animation-delay: .4s;
+    animation-fill-mode: forwards;
+    transform: translateX(120%);
+}
+
+#why{
+    display: grid;
+    height: 100vh;
+}
+
+#why h1{
+    font-size: 35px;
+    justify-self: center;
+    padding-top: 3em;
+}
+
+#why iframe{
+    justify-self: center;
+    margin-top: -20%;
+    padding-top: 10em;
+}
+
+@keyframes slideInn{
+    to{
+        transform: translateX(0%);
+    }
+}
+
+#pricing{
+    height: 100vh;
+    display: grid;
+    margin: 0 10% 0 10%;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 8em;
+    padding-bottom: 10em;
+}
+
+.block-wrapper{
+    margin-top:-8em;
+}
+
+#pricing h1{
+    margin-top: 2em;
+    grid-column: 1/4;
+    justify-self: center;
+    font-size: 35px;
+    z-index: -1;
+}
+
+
+.block-wrapper{
+    border-radius: 24px;
+    margin-top: -10em;
+    grid-row: 2/3;
+    text-align: center;
+    box-shadow: 3.5px 3px 10px rgba(128, 0, 128, 0.514),
+    inset 2px 2px 8px rgba(0, 0, 0, 0.114),
+    inset -2px -2px 8px rgba(0, 0, 0, 0.114);
+    transition: all 0.4s linear;
+    cursor: pointer;
+}
+
+.block-wrapper p{
+    text-align: center;
+    margin: 4%;
+}
+
+.block-wrapper:hover{
+    transform: scale(1.1);
+    box-shadow: 4px 5px 18px rgba(128, 0, 128, 0.514),
+                inset 2px 2px 8px rgba(0, 0, 0, 0.114),
+                inset -2px -2px 8px rgba(0, 0, 0, 0.114);
+}
+
+#contactus{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 10%;
+    height: 100vh;
+}
+
+#form{
+    justify-self: center;
+}
+
+input{
+    border-radius: 24px;
+    padding: 10px;
+    border: .4px solid purple;
+}
+
+.contact-us{
+    border-left: .1px solid cyan;
+}
+
+.contact-us h1{
+    margin-left: 8%;
+}
+
+.contact-us p{
+    margin-left: 8%;
+    margin-right: 8%;
+    text-align: justify;
+}
+
+
+
+
+/*DESKTOP VIEWPORT*/
+
+/*MOBILE VIEW*/
+@media (max-width: 675px){
+    .icon, .close-btn{
+        display: block;
+    }
+
+    .icon{
+        position: absolute;
+        right: 24px;
+    }
+
+    .links{
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        width: 90%;
+        right: -90%;
+        background: purple;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        z-index: 2;
+        transition: 0.3s ease-in-out;
+    }
+
+    .links li{
+        margin-right: 0;
+        margin-bottom: 50px;
+        font-size: 1.5em;
+    }
+
+    .links li a{
+        color: cyan;
+        font-weight: 500;
+    }
+
+    .close-btn{
+        position: absolute;
+        top: 24px;
+        right: -90vh;
+        z-index: 3;
+        transition: 0.3s ease-in-out;
+    }
+
+    .close-btn:hover{
+        opacity: 0.6;
+    }
+
+    /*OPEN CLASS*/
+    .open .links{
+        right: 0;
+    }
+
+    .open .close-btn{
+        right: 32px;
+    }
+
+    .open .backdrop{
+        display: block;
+    }
+
+    #home{
+        grid-template-columns: 1fr;
+    }
+
+    #home p{
+        margin-right: 2%;
+    }
+
+    #why h1{
+        padding-right: 1%;
+        padding-top: 35%;
+        text-align: center;
+        font-size: 1.6em;
+    }
+
+    #why iframe{
+        width: 75%;
+    }
+
+    #pricing{
+        display: flex;
+        flex-direction: column;
+        padding-top: 1%;
+    }
+
+    #pricing h1{
+        text-align: center;
+        padding-top: 3%;
+    }
+
+    #contactus{
+        margin-top: 95%;
+    }
+
+    .block-wrapper{
+        margin-top: 10%;
+    }
+
+}
+/*MOBILE VIEW*/
